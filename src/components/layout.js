@@ -1,5 +1,5 @@
 import * as React from 'react'
-import studio_logo from '../images/icon.png'
+import studio_logo from '../images/logo.svg'
 
 const pageStyles = {
    color: "#232129",
@@ -7,8 +7,6 @@ const pageStyles = {
    height: '100%',
    display: 'flex',
    justifyContent: 'center',
-   alignItems: 'center',
-   backgroundColor: '#000000'
 }
 
 const Layout = ({ pageTitle }) => {
