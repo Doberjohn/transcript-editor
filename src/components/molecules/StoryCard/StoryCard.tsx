@@ -1,15 +1,9 @@
+import './StoryCard.css';
 import React from "react";
 import {Div, Paragraph, Span} from "../../atoms";
-import './StoryCard.css';
+import {IStoryCard} from "../../../shared/interfaces";
 
-interface StoryCardProps extends React.HTMLAttributes<Element> {
-   title: string;
-   titleSize?: string;
-   subtitle?: string;
-   imageUrl: string;
-}
-
-export const StoryCard = ({title, titleSize = 'h6', subtitle, imageUrl, ...rest}: StoryCardProps) => {
+export const StoryCard = ({title, titleSize = 'h6', subtitle, imageUrl, ...rest}: IStoryCard) => {
    return (
       <Div {...rest}>
          <Div className="card">

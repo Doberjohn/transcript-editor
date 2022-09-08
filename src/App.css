@@ -1,8 +1,13 @@
-.app {
-  text-align: center;
-  background-color: #282c34;
+.full-height {
+  min-height: 100vh;
 }
 
-.container {
-  min-height: 100vh;
+.header_brand_name {
+  margin-left: 15px;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 11;
+  width: 100vw;
 }
