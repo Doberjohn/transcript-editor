@@ -3,7 +3,7 @@ import {Div, Span} from "../../atoms";
 import {StoryCard} from "../../molecules";
 import {IStoryCard} from "../../../shared/interfaces";
 
-export const LatestStory = ({title, titleSize = 'h6', subtitle, imageUrl}: IStoryCard) => {
+export const LatestStory = ({title, titleSize = 'h6', subtitle, imageUrl, actionUrl}: IStoryCard) => {
    return (
       <Div>
          <Span className="h2">Latest story</Span>
@@ -12,7 +12,8 @@ export const LatestStory = ({title, titleSize = 'h6', subtitle, imageUrl}: IStor
             title={title}
             titleSize={titleSize}
             subtitle={subtitle}
-            imageUrl={imageUrl}/>
+            imageUrl={imageUrl}
+            actionUrl={actionUrl}/>
       </Div>
    )
 }

@@ -15,14 +15,20 @@ export const PreviousStories = ({stories}: PreviousStoriesProps) => {
             {stories.map((story, index) => {
                return (
                   <Div key={`previous-story-${index}`} className="col-md-6">
-                     <StoryCard className="mt-4" title={story.title} subtitle={story.subtitle} imageUrl={story.imageUrl} titleSize={story.titleSize}/>
+                     <StoryCard
+                        className="mt-4"
+                        title={story.title}
+                        titleSize={story.titleSize}
+                        subtitle={story.subtitle}
+                        imageUrl={story.imageUrl}
+                        actionUrl={story.actionUrl}/>
                   </Div>
                )
             })}
          </Div>
-         <Div className="d-flex align-items-center justify-content-center">
-            <button type="button" className="btn mt-3 btn-primary">Read more stories</button>
-         </Div>
+         {/*<Div className="d-flex align-items-center justify-content-center">*/}
+         {/*   <button type="button" className="btn mt-4 btn-primary">Read more stories</button>*/}
+         {/*</Div>*/}
       </Div>
    )
 }

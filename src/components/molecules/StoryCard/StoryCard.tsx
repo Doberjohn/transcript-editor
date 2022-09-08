@@ -3,10 +3,10 @@ import React from "react";
 import {Div, Paragraph, Span} from "../../atoms";
 import {IStoryCard} from "../../../shared/interfaces";
 
-export const StoryCard = ({title, titleSize = 'h6', subtitle, imageUrl, ...rest}: IStoryCard) => {
+export const StoryCard = ({title, titleSize = 'h6', subtitle, imageUrl, actionUrl, ...rest}: IStoryCard) => {
    return (
       <Div {...rest}>
-         <Div className="card">
+         <a className="card text-decoration-none" href={actionUrl} target="_blank" rel="noreferrer">
             <img src={imageUrl} className="card-img-top" alt={title}/>
             <Div className="card-body">
                <Span className={`${titleSize} card-title`}>{title}</Span>
@@ -14,7 +14,7 @@ export const StoryCard = ({title, titleSize = 'h6', subtitle, imageUrl, ...rest}
                   <Paragraph className="card-text my-3">{subtitle}</Paragraph>
                )}
             </Div>
-         </Div>
+         </a>
       </Div>
    )
 }

@@ -20,9 +20,10 @@ export const HomeTemplate = ({latestStory, stories}:HomeTemplateProps) => {
                      title={latestStory.title}
                      titleSize={latestStory.titleSize}
                      subtitle={latestStory.subtitle}
-                     imageUrl={latestStory.imageUrl}/>
+                     imageUrl={latestStory.imageUrl}
+                     actionUrl={latestStory.actionUrl}/>
                </Div>
-               <Div className="col-lg-6 py-lg-5 text-start">
+               <Div className="col-lg-6 py-lg-5 ps-lg-5 text-start">
                   <PreviousStories stories={stories}/>
                </Div>
             </Div>
