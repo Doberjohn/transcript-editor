@@ -21,7 +21,8 @@ export const HomeTemplate = ({latestStory, stories}:HomeTemplateProps) => {
                      titleSize={latestStory.titleSize}
                      subtitle={latestStory.subtitle}
                      imageUrl={latestStory.imageUrl}
-                     actionUrl={latestStory.actionUrl}/>
+                     actionUrl={latestStory.actionUrl}
+                     type="latest"/>
                </Div>
                <Div className="col-lg-6 py-lg-5 ps-lg-5 text-start">
                   <PreviousStories stories={stories}/>

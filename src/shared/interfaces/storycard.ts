@@ -6,4 +6,5 @@ export interface IStoryCard extends React.HTMLAttributes<Element> {
    actionUrl: string;
    titleSize?: string;
    subtitle?: string;
+   type: "latest" | "previous";
 }

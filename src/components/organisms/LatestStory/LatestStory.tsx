@@ -13,7 +13,8 @@ export const LatestStory = ({title, titleSize = 'h6', subtitle, imageUrl, action
             titleSize={titleSize}
             subtitle={subtitle}
             imageUrl={imageUrl}
-            actionUrl={actionUrl}/>
+            actionUrl={actionUrl}
+            type="latest"/>
       </Div>
    )
 }

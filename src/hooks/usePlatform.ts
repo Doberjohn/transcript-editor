@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
 
+const calculatePlatform = () => {
+   let platform = 'mobile';
+
+   if (window.innerWidth > 1450) {
+      platform = 'desktop';
+   } else if (window.innerWidth > 600) {
+      platform = 'tablet';
+   }
+
+   return platform;
+}
+
 export const usePlatform = () => {
-   const [platform, setPlatform] = useState('desktop');
+   const [platform, setPlatform] = useState(calculatePlatform);
 
    const updateMedia = () => {
-      let platform = 'mobile';
-
-      if (window.innerWidth > 1450) {
-         platform = 'desktop';
-      } else if (window.innerWidth > 600) {
-         platform = 'tablet';
-      }
-
-      setPlatform(platform);
+      setPlatform(calculatePlatform);
    };
 
    useEffect(() => {

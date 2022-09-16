@@ -21,7 +21,8 @@ export const PreviousStories = ({stories}: PreviousStoriesProps) => {
                         titleSize={story.titleSize}
                         subtitle={story.subtitle}
                         imageUrl={story.imageUrl}
-                        actionUrl={story.actionUrl}/>
+                        actionUrl={story.actionUrl}
+                        type="previous"/>
                   </Div>
                )
             })}
