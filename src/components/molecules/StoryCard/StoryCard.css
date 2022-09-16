@@ -6,3 +6,9 @@
 .previous-card {
    height: 140px;
 }
+
+@media (max-width: 1023px) {
+   .previous-card {
+      height: 200px;
+   }
+}
