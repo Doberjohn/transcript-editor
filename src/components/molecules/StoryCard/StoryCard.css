@@ -2,13 +2,3 @@
    background-color: #2A2A2A !important;
    cursor: pointer;
 }
-
-.previous-card {
-   height: 140px;
-}
-
-@media (max-width: 1023px) {
-   .previous-card {
-      height: 200px;
-   }
-}
