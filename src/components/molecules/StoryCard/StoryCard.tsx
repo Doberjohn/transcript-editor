@@ -2,12 +2,18 @@ import './StoryCard.css';
 import React from "react";
 import {Div, Paragraph, Span} from "../../atoms";
 import {IStoryCard} from "../../../shared/interfaces";
+import useAnalyticsEventTracker from "../../../hooks/useAnalyticsEventTracker";
 
 export const StoryCard = ({title, titleSize = 'h6', subtitle, imageUrl, actionUrl, type, ...rest}: IStoryCard) => {
+   const gaEventTracker = useAnalyticsEventTracker('Story');
+
+   const trackOpenEvent = () => {
+      gaEventTracker("Read in Medium", title);
+   }
 
    return (
       <Div {...rest}>
-         <a className="card text-decoration-none" href={actionUrl} target="_blank" rel="noreferrer">
+         <a onClick={trackOpenEvent} className="card text-decoration-none" href={actionUrl} target="_blank" rel="noreferrer">
             <img src={imageUrl} className="card-img-top" alt={title}/>
             <Div className="card-body">
                <Span className={`${titleSize} card-title`}>{title}</Span>
