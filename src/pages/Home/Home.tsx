@@ -1,8 +1,8 @@
 import React from "react";
 import {IStoryCard} from "../../shared/interfaces";
-import {HomeTemplate} from "../../components/templates/HomeTemplate/HomeTemplate";
+import {HomeTemplate} from "../../components/templates";
 
-export const Home = () => {
+const Home = () => {
    const stories: IStoryCard[] = [
       {
          title: 'Maybe she was lucky',
@@ -48,3 +48,5 @@ export const Home = () => {
 
    return <HomeTemplate latestStory={homePageStories[0]} stories={homePageStories.slice(1)}/>
 }
+
+export default Home;
