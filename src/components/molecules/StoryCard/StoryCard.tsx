@@ -8,7 +8,7 @@ export const StoryCard = ({title, titleSize = 'h6', subtitle, imageUrl, actionUr
    const gaEventTracker = useAnalyticsEventTracker('Story');
 
    const trackOpenEvent = () => {
-      gaEventTracker("Read in Medium", title);
+      gaEventTracker("Read on Medium", title);
    }
 
    return (

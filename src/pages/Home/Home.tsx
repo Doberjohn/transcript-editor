@@ -5,16 +5,22 @@ import {HomeTemplate} from "../../components/templates";
 const Home = () => {
    const stories: IStoryCard[] = [
       {
-         title: 'Maybe she was lucky',
+         title: 'The spark of creativity',
          titleSize: 'h4',
-         subtitle: 'A woman tries desperately to satisfy her husband. Is she going to make it? Is she going to be lucky?',
-         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/Maybe+she+was+lucky+Medium.png',
-         actionUrl: 'https://blog.studiovn21.com/maybe-she-was-lucky-7a07e2b0ff6f',
+         subtitle: 'Imagination is the spark that creates the fire of creativity — Richard L. Peterson',
+         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/flash+fiction/The+spark+of+creativity.png',
+         actionUrl: 'https://medium.com/the-interactive-storytelling/a-spark-of-creativity-34d1ee7e461f',
          type: 'latest',
       },
       {
+         title: 'Maybe she was lucky',
+         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/flash+fiction/Maybe+she+was+lucky.png',
+         actionUrl: 'https://blog.studiovn21.com/maybe-she-was-lucky-7a07e2b0ff6f',
+         type: 'previous',
+      },
+      {
          title: 'A guess in the reflection',
-         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/A+guess+in+the+reflection+Medium.png',
+         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/flash+fiction/A+guess+in+the+reflection.png',
          actionUrl: 'https://blog.studiovn21.com/auess-in-the-reflection-d5482a65b21f',
          type: 'previous',
       },
