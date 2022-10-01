@@ -17,7 +17,7 @@ export const StoryCard = ({title, titleSize = 'h6', subtitle, imageUrl, actionUr
             <img src={imageUrl} className="card-img-top" alt={title}/>
             <Div className="card-body">
                <Span className={`${titleSize} card-title`}>{title}</Span>
-               {subtitle && (
+               {type === 'latest' && subtitle && (
                   <Paragraph className="card-text my-3">{subtitle}</Paragraph>
                )}
             </Div>

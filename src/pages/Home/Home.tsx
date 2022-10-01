@@ -5,12 +5,19 @@ import {HomeTemplate} from "../../components/templates";
 const Home = () => {
    const stories: IStoryCard[] = [
       {
-         title: 'The spark of creativity',
+         title: 'What happens in the dark - Chapter 1',
          titleSize: 'h4',
-         subtitle: 'Imagination is the spark that creates the fire of creativity — Richard L. Peterson',
-         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/flash+fiction/The+spark+of+creativity.png',
-         actionUrl: 'https://medium.com/the-interactive-storytelling/a-spark-of-creativity-34d1ee7e461f',
+         subtitle: 'This bar is far from what someone would call a fine establishment. Small, with ten to fifteen chairs around the counter and no room for tables...',
+         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/series/What+happens+in+the+dark+Medium.png',
+         actionUrl: 'https://blog.studiovn21.com/what-happens-in-the-dark-d4c130361cf2',
          type: 'latest',
+      },
+      {
+         title: 'The spark of creativity',
+         subtitle: 'Imagination is the spark that creates the fire of creativity — Richard L. Peterson',
+         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/microfiction/The+spark+of+creativity.png',
+         actionUrl: 'https://medium.com/the-interactive-storytelling/a-spark-of-creativity-34d1ee7e461f',
+         type: 'previous',
       },
       {
          title: 'Maybe she was lucky',
@@ -22,6 +29,12 @@ const Home = () => {
          title: 'A guess in the reflection',
          imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/short+stories/flash+fiction/A+guess+in+the+reflection.png',
          actionUrl: 'https://blog.studiovn21.com/auess-in-the-reflection-d5482a65b21f',
+         type: 'previous',
+      },
+      {
+         title: 'Newsletter | September 2022',
+         imageUrl: 'https://studio-vn21.s3.eu-central-1.amazonaws.com/newsletter/September+2022+Newsletter.png',
+         actionUrl: 'https://blog.studiovn21.com/newsletter-september-2022-28a94c1b386b',
          type: 'previous',
       },
       {
