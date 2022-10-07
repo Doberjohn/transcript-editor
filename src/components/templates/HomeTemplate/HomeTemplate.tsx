@@ -13,18 +13,17 @@ export const HomeTemplate = ({latestStory, stories}:HomeTemplateProps) => {
    return (
       <Div>
          <NavigationBar/>
-         <Div className="container full-height">
+         <Div className="container full-height" style={{maxWidth: '1000px'}}>
             <Div className="row py-5">
-               <Div className="col-lg-6 py-5 text-start">
+               <Div className="col-lg-12 py-5 text-start">
                   <LatestStory
                      title={latestStory.title}
-                     titleSize={latestStory.titleSize}
                      subtitle={latestStory.subtitle}
                      imageUrl={latestStory.imageUrl}
                      actionUrl={latestStory.actionUrl}
                      type="latest"/>
                </Div>
-               <Div className="col-lg-6 py-lg-5 ps-lg-5 text-start">
+               <Div className="col-lg-12 py-lg-5 text-start">
                   <PreviousStories stories={stories}/>
                </Div>
             </Div>

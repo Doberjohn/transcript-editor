@@ -18,7 +18,6 @@ export const PreviousStories = ({stories}: PreviousStoriesProps) => {
                      <StoryCard
                         className="mt-4"
                         title={story.title}
-                        titleSize={story.titleSize}
                         subtitle={story.subtitle}
                         imageUrl={story.imageUrl}
                         actionUrl={story.actionUrl}
@@ -27,9 +26,6 @@ export const PreviousStories = ({stories}: PreviousStoriesProps) => {
                )
             })}
          </Div>
-         {/*<Div className="d-flex align-items-center justify-content-center">*/}
-         {/*   <button type="button" className="btn mt-4 btn-primary">Read more stories</button>*/}
-         {/*</Div>*/}
       </Div>
    )
 }
