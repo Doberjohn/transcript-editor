@@ -20,7 +20,7 @@ export const PreviousStories = ({stories}: PreviousStoriesProps) => {
                         title={story.title}
                         subtitle={story.subtitle}
                         imageUrl={story.imageUrl}
-                        actionUrl={story.actionUrl}
+                        readLink={story.readLink}
                         type="previous"/>
                   </Div>
                )

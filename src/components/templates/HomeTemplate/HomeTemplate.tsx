@@ -13,14 +13,14 @@ export const HomeTemplate = ({latestStory, stories}:HomeTemplateProps) => {
    return (
       <Div>
          <NavigationBar/>
-         <Div className="container full-height" style={{maxWidth: '1000px'}}>
+         <Div id="homePageContainer" className="container full-height" style={{maxWidth: '1000px'}}>
             <Div className="row py-5">
                <Div className="col-lg-12 py-5 text-start">
                   <LatestStory
                      title={latestStory.title}
                      subtitle={latestStory.subtitle}
                      imageUrl={latestStory.imageUrl}
-                     actionUrl={latestStory.actionUrl}
+                     readLink={latestStory.readLink}
                      type="latest"/>
                </Div>
                <Div className="col-lg-12 py-lg-5 text-start">

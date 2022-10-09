@@ -3,7 +3,7 @@ import {Div, Span} from "../../atoms";
 import {StoryCard} from "../../molecules";
 import {IStoryCard} from "../../../shared/interfaces";
 
-export const LatestStory = ({title, subtitle, imageUrl, actionUrl}: IStoryCard) => {
+export const LatestStory = ({title, subtitle, imageUrl, readLink}: IStoryCard) => {
    return (
       <Div>
          <Span className="h2">Latest story</Span>
@@ -12,7 +12,7 @@ export const LatestStory = ({title, subtitle, imageUrl, actionUrl}: IStoryCard) 
             title={title}
             subtitle={subtitle}
             imageUrl={imageUrl}
-            actionUrl={actionUrl}
+            readLink={readLink}
             type="latest"/>
       </Div>
    )
