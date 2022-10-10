@@ -3,6 +3,7 @@ import {IStoryCard} from "../../../shared/interfaces";
 import {Div} from "../../atoms";
 import {NavigationBar} from "../../molecules/NavigationBar/NavigationBar";
 import {LatestStory, PreviousStories} from "../../organisms";
+import BackgroundImage from "../../../shared/assets/placeholder_3.webp";
 
 interface HomeTemplateProps {
    latestStory: IStoryCard;
@@ -11,7 +12,7 @@ interface HomeTemplateProps {
 
 export const HomeTemplate = ({latestStory, stories}:HomeTemplateProps) => {
    return (
-      <Div>
+      <Div style={{backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundAttachment: 'fixed'}}>
          <NavigationBar/>
          <Div id="homePageContainer" className="container full-height" style={{maxWidth: '1000px'}}>
             <Div className="row py-5">
