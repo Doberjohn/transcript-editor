@@ -3,7 +3,7 @@ import {IStoryCard} from "../../../shared/interfaces";
 import {Div} from "../../atoms";
 import {NavigationBar} from "../../molecules/NavigationBar/NavigationBar";
 import {LatestStory, PreviousStories} from "../../organisms";
-import BackgroundImage from "../../../shared/assets/placeholder_3.webp";
+import BackgroundImage from "../../../shared/assets/background.webp";
 
 interface HomeTemplateProps {
    latestStory: IStoryCard;

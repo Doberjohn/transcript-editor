@@ -4,7 +4,7 @@ import {Anchor, Div} from "../../atoms";
 import {IStoryCard} from "../../../shared/interfaces";
 import useAnalyticsEventTracker from "../../../hooks/useAnalyticsEventTracker";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import PlaceholderImage from "../../../shared/assets/placeholder_3.webp";
+import PlaceholderImage from "../../../shared/assets/background.webp";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import {usePlatform} from "../../../hooks/usePlatform";
 
