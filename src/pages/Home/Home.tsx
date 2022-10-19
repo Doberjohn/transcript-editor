@@ -7,11 +7,25 @@ const amazonS3bucket = 'https://studio-vn21.s3.eu-central-1.amazonaws.com';
 const Home = () => {
    const stories: IStoryCard[] = [
       {
+         title: 'Safer passage - Chapter 1',
+         subtitle: 'Strength comes in faith',
+         imageUrl: `${amazonS3bucket}/short+stories/mini-series/Safer+passage/Safer+passage+-+Chapter+1.webp`,
+         readLink: 'https://blog.studiovn21.com/safer-passage-chapter-1-474e54f45581',
+         type: 'latest',
+      },
+      {
          title: 'What happens in the dark - Chapter 2',
          subtitle: 'Home, shitty home',
          imageUrl: `${amazonS3bucket}/short+stories/series/What+happens+in+the+dark+-+Chapter+2.webp`,
          readLink: 'https://blog.studiovn21.com/what-happens-in-the-dark-chapter-2-439d51f86983',
-         type: 'latest',
+         type: 'previous',
+      },
+      {
+         title: 'What happens in the dark - Chapter 1',
+         subtitle: 'Dangerous encounters',
+         imageUrl: `${amazonS3bucket}/short+stories/series/What+happens+in+the+dark+-+Chapter+1.webp`,
+         readLink: 'https://blog.studiovn21.com/what-happens-in-the-dark-d4c130361cf2',
+         type: 'previous',
       },
       {
          title: 'Would you be somebody else?',
@@ -25,13 +39,6 @@ const Home = () => {
          subtitle: 'Let imagination be your guide',
          imageUrl: `${amazonS3bucket}/short+stories/microfiction/The+spark+of+creativity.webp`,
          readLink: 'https://blog.studiovn21.com/a-spark-of-creativity-34d1ee7e461f',
-         type: 'previous',
-      },
-      {
-         title: 'What happens in the dark - Chapter 1',
-         subtitle: 'Dangerous encounters',
-         imageUrl: `${amazonS3bucket}/short+stories/series/What+happens+in+the+dark+-+Chapter+1.webp`,
-         readLink: 'https://blog.studiovn21.com/what-happens-in-the-dark-d4c130361cf2',
          type: 'previous',
       },
       {
