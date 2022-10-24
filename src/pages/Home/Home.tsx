@@ -7,11 +7,18 @@ const amazonS3bucket = 'https://studio-vn21.s3.eu-central-1.amazonaws.com';
 const Home = () => {
    const stories: IStoryCard[] = [
       {
+         title: 'Safer passage - Final chapter',
+         subtitle: 'Blessed and cursed',
+         imageUrl: `${amazonS3bucket}/short+stories/mini-series/Safer+passage/Safer+Passage+-+Chapter+2.webp`,
+         readLink: 'https://blog.studiovn21.com/safer-passage-chapter-2-bc7d7d53c39f',
+         type: 'latest',
+      },
+      {
          title: 'Safer passage - Chapter 1',
          subtitle: 'Strength comes in faith',
          imageUrl: `${amazonS3bucket}/short+stories/mini-series/Safer+passage/Safer+passage+-+Chapter+1.webp`,
          readLink: 'https://blog.studiovn21.com/safer-passage-chapter-1-474e54f45581',
-         type: 'latest',
+         type: 'previous',
       },
       {
          title: 'What happens in the dark - Chapter 2',
