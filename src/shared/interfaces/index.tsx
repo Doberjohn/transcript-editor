@@ -1,4 +1,4 @@
-import {IStoryCard} from "./storycard";
-import {IAnchor} from "./anchor";
+import {IProduct} from "./product";
+import {ISVG} from "./SVG";
 
-export type {IStoryCard, IAnchor}
+export type {IProduct, ISVG}

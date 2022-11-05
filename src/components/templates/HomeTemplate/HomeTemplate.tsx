@@ -1,33 +1,57 @@
-import React from "react";
-import {IStoryCard} from "../../../shared/interfaces";
+import React, {useState} from "react";
 import {Div} from "../../atoms";
-import {NavigationBar} from "../../molecules/NavigationBar/NavigationBar";
-import {LatestStory, PreviousStories} from "../../organisms";
-import BackgroundImage from "../../../shared/assets/background.webp";
+import {IProduct} from "../../../shared/interfaces";
+import {MinusCircleIcon, PlusCircleIcon} from "../../../shared/svgs";
+
 
 interface HomeTemplateProps {
-   latestStory: IStoryCard;
-   stories: IStoryCard[];
+   products: IProduct[];
 }
 
-export const HomeTemplate = ({latestStory, stories}:HomeTemplateProps) => {
+export const HomeTemplate = ({products}: HomeTemplateProps) => {
+   const [filteredProducts, setFilteredProducts] = useState(products);
+
+   console.log(filteredProducts)
+
+   const reduceQuantity = (product: IProduct) => {
+      product.quantity = product.quantity - 1;
+      setFilteredProducts([...filteredProducts])
+   }
+
+   const increaseQuantity = (product: IProduct) => {
+      product.quantity = product.quantity + 1;
+      setFilteredProducts([...filteredProducts])
+   }
+
    return (
-      <Div style={{backgroundImage: `url(${BackgroundImage})`, backgroundSize: 'cover', backgroundAttachment: 'fixed'}}>
-         <NavigationBar/>
-         <Div id="homePageContainer" className="container full-height" style={{maxWidth: '1000px'}}>
-            <Div className="row py-5">
-               <Div className="col-lg-12 py-5 text-start">
-                  <LatestStory
-                     title={latestStory.title}
-                     subtitle={latestStory.subtitle}
-                     imageUrl={latestStory.imageUrl}
-                     readLink={latestStory.readLink}
-                     type="latest"/>
-               </Div>
-               <Div className="col-lg-12 py-lg-5 text-start">
-                  <PreviousStories stories={stories}/>
-               </Div>
-            </Div>
+      <Div className="container" style={{maxWidth: '1000px'}}>
+         <Div className="row py-5">
+            <table className="table table-dark table-hover">
+               <thead>
+               <tr>
+                  <th scope="col">Όνομα Προϊόντος</th>
+                  <th className="text-center" scope="col">Ποσότητα</th>
+               </tr>
+               </thead>
+               <tbody>
+               {filteredProducts.map((product) => {
+                  return (
+                     <tr key={product.title}>
+                        <th scope="row">{product.title}</th>
+                        <th scope="row">
+                           <Div className="d-flex align-items-center justify-content-center">
+                              <MinusCircleIcon onClick={() => reduceQuantity(product)}/>
+                              <Div className="ms-2 me-2">
+                                 {product.quantity}
+                              </Div>
+                              <PlusCircleIcon onClick={() => increaseQuantity(product)}/>
+                           </Div>
+                        </th>
+                     </tr>
+                  )
+               })}
+               </tbody>
+            </table>
          </Div>
       </Div>
    )
