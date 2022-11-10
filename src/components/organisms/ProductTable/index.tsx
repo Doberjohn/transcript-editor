@@ -16,7 +16,7 @@ interface IQuantityCell {
 }
 
 const ProductQuantityCell = ({product, updateQuantity}: IQuantityCell) => {
-   const [value, setValue] = useState<number>(product.quantity);
+   const [value, setValue] = useState(product.quantity);
 
    const onQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       let parsedValue = 0;
@@ -36,14 +36,17 @@ const ProductQuantityCell = ({product, updateQuantity}: IQuantityCell) => {
       }
    }
 
+   const handleFocus = (e: React.ChangeEvent<HTMLInputElement>) => e.target.select();
+
    return (
       <Div className="d-flex align-items-center">
          <input
-            type="text"
+            type="number"
             className="form-control text-center"
             value={value}
             onChange={onQuantityChange}
-            onBlur={onQuantityBlur}/>
+            onBlur={onQuantityBlur}
+            onFocus={(e) => handleFocus(e)}/>
       </Div>
    )
 }
