@@ -1,10 +1,14 @@
 import './App.css';
-import React from 'react';
 import {Div} from "./components/atoms";
 import {HomePage} from "./pages";
-import ReactGA from 'react-ga4';
+import Parse from 'parse';
 
-ReactGA.initialize("G-28MLPHX55W");
+// Your Parse initialization configuration goes here
+const PARSE_APPLICATION_ID = 'CrGXeDwyK55fJUehf50tnQwOPVUZMqV5WHIgKxhS';
+const PARSE_HOST_URL = 'https://parseapi.back4app.com/';
+const PARSE_JAVASCRIPT_KEY = 'O5Ttvz0UJPz0u03aY8kTWldkaoL6E8M5tret4OLi';
+Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
+Parse.serverURL = PARSE_HOST_URL;
 
 function App() {
    return (

@@ -1,33 +1,59 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {IProduct} from "../../shared/interfaces";
 import {HomeTemplate} from "../../components/templates";
+import Parse from 'parse';
 
 
 const Home = () => {
-   const products: IProduct[] = [
-      {
-         title: 'Rowenta Silence τριγωνικό πέλμα Παρκέ ZR901801',
-         quantity: 1,
-      },
-      {
-         title: 'Αναδευτήρες μίξερ PYREX SB530 Original 333148',
-         quantity: 2,
-      },
-      {
-         title: 'Αναδευτήρες μίξερ IZZY 3 σε 1 IZ-1001 Original 223534',
-         quantity: 3,
-      },
-      {
-         title: 'Φίλτρο Σφουγγάρι σκούπας Siemens original 17000301',
-         quantity: 4,
-      },
-      {
-         title: 'Κανάτα καφετιέρας Ariete Vintage 1342 Original AT4066009020',
-         quantity: 5,
-      }
-   ]
+   const [products, setProducts] = useState<IProduct[]>([]);
 
-   return <HomeTemplate products={products}/>
+   const readProducts = async function(): Promise<IProduct[]> {
+      try {
+         const query = new Parse.Query('Product');
+         const backendProducts = await query.find();
+         return backendProducts.map((backendProduct) => {
+            return {
+               id: backendProduct.id,
+               name: backendProduct.get('name'),
+               quantity: backendProduct.get('quantity'),
+               veryLowStockThreshold: backendProduct.get('veryLowStockThreshold'),
+               lowStockThreshold: backendProduct.get('lowStockThreshold'),
+            }
+         });
+      } catch (e) {
+         console.error(e)
+         return [];
+      }
+   }
+
+   useEffect(() => {
+      readProducts().then((parsedProducts) => {
+         setProducts(parsedProducts);
+      });
+   }, []);
+
+   const reduceQuantity = async (product: IProduct) => {
+      let Product = new Parse.Object('Product');
+      Product.set('objectId', product.id);
+      Product.set('quantity', product.quantity - 1);
+
+      await Product.save();
+      const parsedProducts = await readProducts();
+      setProducts(parsedProducts);
+   }
+
+   const increaseQuantity = async (product: IProduct) => {
+      let Product = new Parse.Object('Product');
+      Product.set('objectId', product.id);
+      Product.set('quantity', product.quantity + 1);
+
+      await Product.save();
+      const parsedProducts = await readProducts();
+      setProducts(parsedProducts);
+   }
+
+   if (products.length === 0) return null;
+   return <HomeTemplate backendProducts={products} reduceQuantity={reduceQuantity} increaseQuantity={increaseQuantity}/>
 }
 
 export default Home;
