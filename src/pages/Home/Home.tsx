@@ -32,20 +32,10 @@ const Home = () => {
       });
    }, []);
 
-   const reduceQuantity = async (product: IProduct) => {
+   const updateQuantity = async (product: IProduct, newQuantity: number) => {
       let Product = new Parse.Object('Product');
       Product.set('objectId', product.id);
-      Product.set('quantity', product.quantity - 1);
-
-      await Product.save();
-      const parsedProducts = await readProducts();
-      setProducts(parsedProducts);
-   }
-
-   const increaseQuantity = async (product: IProduct) => {
-      let Product = new Parse.Object('Product');
-      Product.set('objectId', product.id);
-      Product.set('quantity', product.quantity + 1);
+      Product.set('quantity', newQuantity);
 
       await Product.save();
       const parsedProducts = await readProducts();
@@ -53,7 +43,7 @@ const Home = () => {
    }
 
    if (products.length === 0) return null;
-   return <HomeTemplate backendProducts={products} reduceQuantity={reduceQuantity} increaseQuantity={increaseQuantity}/>
+   return <HomeTemplate backendProducts={products} updateQuantity={updateQuantity} />
 }
 
 export default Home;

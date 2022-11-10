@@ -5,11 +5,10 @@ import {ProductTable} from "../../organisms";
 
 interface HomeTemplateProps {
    backendProducts: IProduct[];
-   reduceQuantity: Function;
-   increaseQuantity: Function;
+   updateQuantity: Function;
 }
 
-export const HomeTemplate = ({backendProducts, reduceQuantity, increaseQuantity}: HomeTemplateProps) => {
+export const HomeTemplate = ({backendProducts, updateQuantity}: HomeTemplateProps) => {
    const [searchTerm, setSearchTerm] = useState('');
 
    const [veryLowStockProducts, setVeryLowStockProducts] = useState(backendProducts.filter((product) => {
@@ -67,16 +66,16 @@ export const HomeTemplate = ({backendProducts, reduceQuantity, increaseQuantity}
 
    return (
       <Div className="container" style={{maxWidth: '1000px'}}>
-         <Div className="row py-5">
+         <Div className="row py-5 px-3">
             {veryLowStockProducts.length > 0 && <button type="button" className="btn btn-danger">Προϊόντα σε πολύ χαμηλό stock</button>}
-            <ProductTable products={veryLowStockProducts} reduceQuantity={reduceQuantity} increaseQuantity={increaseQuantity}  name="very-low-products"/>
+            <ProductTable products={veryLowStockProducts} name="very-low-products" updateQuantity={updateQuantity}/>
             {lowStockProducts.length > 0 && <button type="button" className="btn btn-warning mt-3">Προϊόντα σε χαμηλό stock</button>}
-            <ProductTable products={lowStockProducts} reduceQuantity={reduceQuantity} increaseQuantity={increaseQuantity}  name="low-stock-products"/>
+            <ProductTable products={lowStockProducts} name="low-stock-products" updateQuantity={updateQuantity}/>
             <Div className="input-group px-0 pb-3 mt-5">
                <input value={searchTerm} onChange={onSearchBarChange} type="text" className="form-control"
                       placeholder="Αναζήτηση προϊόντος"/>
             </Div>
-            <ProductTable products={products} reduceQuantity={reduceQuantity} increaseQuantity={increaseQuantity} name="all-products"/>
+            <ProductTable products={products} name="all-products" updateQuantity={updateQuantity}/>
          </Div>
       </Div>
    )
