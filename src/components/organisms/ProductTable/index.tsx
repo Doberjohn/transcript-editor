@@ -7,15 +7,15 @@ import {usePlatform} from "../../../hooks/usePlatform";
 interface IProductTable {
    name: string,
    products: IProduct[],
-   updateQuantity: Function,
+   updateProducts: Function,
 }
 
 interface IQuantityCell {
    product: IProduct,
-   updateQuantity: Function,
+   updateProducts: Function,
 }
 
-const ProductQuantityCell = ({product, updateQuantity}: IQuantityCell) => {
+const ProductQuantityCell = ({product, updateProducts}: IQuantityCell) => {
    const [value, setValue] = useState(product.quantity);
 
    const onQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +32,7 @@ const ProductQuantityCell = ({product, updateQuantity}: IQuantityCell) => {
 
    const onQuantityBlur = () => {
       if (value !== product.quantity) {
-         updateQuantity(product, value);
+         updateProducts(product, value);
       }
    }
 
@@ -51,7 +51,7 @@ const ProductQuantityCell = ({product, updateQuantity}: IQuantityCell) => {
    )
 }
 
-export const ProductTable = ({name, products, updateQuantity}: IProductTable) => {
+export const ProductTable = ({name, products, updateProducts}: IProductTable) => {
    const platform = usePlatform();
    const quantityCellStyle = platform === 'mobile' ? {width: '20vw'} : {width: '10vw'}
 
@@ -67,7 +67,7 @@ export const ProductTable = ({name, products, updateQuantity}: IProductTable) =>
                         </Div>
                      </TableHeader>
                      <TableHeader style={quantityCellStyle}>
-                        <ProductQuantityCell product={product} updateQuantity={updateQuantity}/>
+                        <ProductQuantityCell product={product} updateProducts={updateProducts}/>
                      </TableHeader>
                   </TableRow>
                )

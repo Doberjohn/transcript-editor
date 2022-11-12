@@ -5,10 +5,10 @@ import {ProductTable} from "../../organisms";
 
 interface HomeTemplateProps {
    backendProducts: IProduct[];
-   updateQuantity: Function;
+   updateProducts: Function;
 }
 
-export const HomeTemplate = ({backendProducts, updateQuantity}: HomeTemplateProps) => {
+export const HomeTemplate = ({backendProducts, updateProducts}: HomeTemplateProps) => {
    const [searchTerm, setSearchTerm] = useState('');
 
    const [veryLowStockProducts, setVeryLowStockProducts] = useState(backendProducts.filter((product) => {
@@ -68,14 +68,14 @@ export const HomeTemplate = ({backendProducts, updateQuantity}: HomeTemplateProp
       <Div className="container" style={{maxWidth: '1000px'}}>
          <Div className="row py-5 px-3">
             {veryLowStockProducts.length > 0 && <button type="button" className="btn btn-danger">Προϊόντα σε πολύ χαμηλό stock</button>}
-            <ProductTable products={veryLowStockProducts} name="very-low-products" updateQuantity={updateQuantity}/>
+            <ProductTable products={veryLowStockProducts} name="very-low-products" updateProducts={updateProducts}/>
             {lowStockProducts.length > 0 && <button type="button" className="btn btn-warning mt-3">Προϊόντα σε χαμηλό stock</button>}
-            <ProductTable products={lowStockProducts} name="low-stock-products" updateQuantity={updateQuantity}/>
+            <ProductTable products={lowStockProducts} name="low-stock-products" updateProducts={updateProducts}/>
             <Div className="input-group px-0 pb-3 mt-5">
                <input value={searchTerm} onChange={onSearchBarChange} type="text" className="form-control"
                       placeholder="Αναζήτηση προϊόντος"/>
             </Div>
-            <ProductTable products={products} name="all-products" updateQuantity={updateQuantity}/>
+            <ProductTable products={products} name="all-products" updateProducts={updateProducts}/>
          </Div>
       </Div>
    )
