@@ -1,6 +1,6 @@
 import './App.css';
 import {Div} from "./components/atoms";
-import {HomePage} from "./pages";
+import {Home as Homepage} from "./pages";
 import Parse from 'parse';
 
 // Your Parse initialization configuration goes here
@@ -13,7 +13,7 @@ Parse.serverURL = PARSE_HOST_URL;
 function App() {
    return (
       <Div>
-         <HomePage/>
+         <Homepage/>
       </Div>
    );
 }

@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import {IProduct} from "../../../shared/interfaces";
 import {Div, Table, TableBody, TableHeader, TableRow} from "../../atoms";
-import {MinusCircleIcon, PlusCircleIcon} from "../../molecules";
 import {usePlatform} from "../../../hooks/usePlatform";
 
 interface IProductTable {
@@ -39,7 +38,7 @@ const ProductQuantityCell = ({product, updateProducts}: IQuantityCell) => {
    const handleFocus = (e: React.ChangeEvent<HTMLInputElement>) => e.target.select();
 
    return (
-      <Div className="d-flex align-items-center">
+      <Div className="d-flex align-items-center mt-2">
          <input
             type="number"
             className="form-control text-center"
@@ -62,7 +61,7 @@ export const ProductTable = ({name, products, updateProducts}: IProductTable) =>
                return (
                   <TableRow key={`${name}-${product.name}`}>
                      <TableHeader>
-                        <Div className="d-flex align-items-center">
+                        <Div className="d-flex align-items-center" style={{height: 50}}>
                            {product.name}
                         </Div>
                      </TableHeader>
