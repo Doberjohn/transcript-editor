@@ -10,6 +10,7 @@ interface VOPlayerProps {
   voiceoverUrl: string;
   setVOPosition: (time: number) => void;
   setIsPlaying: (status: boolean) => void;
+  controlsEnabled?: boolean;
 }
 
 const keyboardConfig = {
@@ -36,6 +37,7 @@ export const VOPlayer = ({
   title,
   setIsPlaying,
   setVOPosition,
+  controlsEnabled = false,
 }: VOPlayerProps) => {
   const [audio, setAudio] = useState<HTMLAudioElement>();
   const [active, setActive] = useState(false);
@@ -122,7 +124,7 @@ export const VOPlayer = ({
   }, [drag]);
 
   useEffect(() => {
-    if (pressedSpaceKey) {
+    if (controlsEnabled && pressedSpaceKey) {
       if (active) pause();
       else play();
     }
@@ -130,19 +132,19 @@ export const VOPlayer = ({
   }, [audio, pressedSpaceKey]);
 
   useEffect(() => {
-    if (audio && pressedHomeKey) {
+    if (controlsEnabled && audio && pressedHomeKey) {
       audio.currentTime = 0;
     }
   }, [audio, pressedHomeKey]);
 
   useEffect(() => {
-    if (audio && pressedLeftArrowKey) {
+    if (controlsEnabled && audio && pressedLeftArrowKey) {
       audio.currentTime = audio.currentTime - 2;
     }
   }, [audio, pressedLeftArrowKey]);
 
   useEffect(() => {
-    if (audio && pressedRightArrowKey) {
+    if (controlsEnabled && audio && pressedRightArrowKey) {
       audio.currentTime = audio.currentTime + 2;
     }
   }, [audio, pressedRightArrowKey]);

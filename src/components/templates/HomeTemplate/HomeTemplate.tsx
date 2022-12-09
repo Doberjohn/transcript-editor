@@ -228,7 +228,8 @@ export const HomeTemplate = () => {
                   title={title.substring(0, title.length - 4)}
                   voiceoverUrl={voiceoverUrl}
                   setIsPlaying={setIsPlaying}
-                  setVOPosition={setVOPosition}/>
+                  setVOPosition={setVOPosition}
+                  controlsEnabled={true}/>
             </div>
          )}
 
