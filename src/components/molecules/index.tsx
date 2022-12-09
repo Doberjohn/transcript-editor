@@ -1,3 +1,3 @@
-import {PlusCircleIcon, MinusCircleIcon} from "./Svg";
+import { ShortcutsTable } from './ShortcutsTable/ShortcutsTable';
 
-export {PlusCircleIcon, MinusCircleIcon}
+export { ShortcutsTable }

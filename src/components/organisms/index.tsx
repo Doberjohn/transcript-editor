@@ -1,3 +1,1 @@
-import {ProductTable} from './ProductTable';
-
-export {ProductTable}
+export {}
