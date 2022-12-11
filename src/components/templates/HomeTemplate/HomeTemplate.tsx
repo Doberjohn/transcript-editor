@@ -1,7 +1,7 @@
 import {Div} from "../../atoms";
 import {ShortcutsTable} from "../../molecules";
 import transcriptBtn from '../../../shared/icons/transcript.png';
-import {useKeyPress} from "../../../hooks/useKeyPress";
+import {useKeyPress} from '@johnfanidis/usekeypress';
 import voiceoverBtn from '../../../shared/icons/voiceover.png';
 import {VOPlayer} from "../../organisms/VOPlayer/VOPlayer";
 import React, {ChangeEvent, useEffect, useRef, useState} from "react";

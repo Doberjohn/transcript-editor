@@ -3,7 +3,7 @@ import styles from './VOPlayer.module.css';
 import {PageTemplate, Pause, Play, PlayerTemplate, Progress, Time, Title } from './components';
 import { pauseBtn, playBtn } from './icons';
 import React, {ChangeEvent, useEffect, useState} from 'react';
-import {useKeyPress} from "../../../hooks/useKeyPress";
+import {useKeyPress} from "@johnfanidis/usekeypress";
 
 interface VOPlayerProps {
   title: string;
