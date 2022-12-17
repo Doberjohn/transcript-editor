@@ -3,9 +3,9 @@ import {ShortcutsTable} from "../../molecules";
 import transcriptBtn from '../../../shared/icons/transcript.png';
 import {useKeyPress} from '@johnfanidis/usekeypress';
 import voiceoverBtn from '../../../shared/icons/voiceover.png';
-import {VOPlayer} from "../../organisms/VOPlayer/VOPlayer";
 import React, {ChangeEvent, useEffect, useRef, useState} from "react";
-import styles from './HomeTemplate.module.css';
+import {VOEditor} from "../../organisms/VOEditor/VOEditor";
+import styled from "styled-components";
 
 interface ITranscript {
    timestamps: number[];
@@ -193,19 +193,19 @@ export const HomeTemplate = () => {
    }
 
    return (
-      <Div className='container pt-5'>
+      <Div>
          <ShortcutsTable/>
          <div className='d-flex justify-content-evenly mt-5'>
-            <div className={`${styles.actionBoxContainer}`} onClick={uploadVoiceoverFile}>
+            <ActionBoxWrapper onClick={uploadVoiceoverFile}>
                Click to upload voiceover
                <img width={100} src={voiceoverBtn} alt='voiceover'/>
                or press Ctrl + V
-            </div>
-            <div className={`${styles.actionBoxContainer}`} onClick={uploadTranscriptFile}>
+            </ActionBoxWrapper>
+            <ActionBoxWrapper onClick={uploadTranscriptFile}>
                Click to upload transcript
                <img width={100} src={transcriptBtn} alt='voiceover'/>
                or press Ctrl + B
-            </div>
+            </ActionBoxWrapper>
          </div>
          <input
             style={{display: 'none'}}
@@ -224,7 +224,7 @@ export const HomeTemplate = () => {
 
          {title && (
             <div className='mt-5'>
-               <VOPlayer
+               <VOEditor
                   title={title.substring(0, title.length - 4)}
                   voiceoverUrl={voiceoverUrl}
                   setIsPlaying={setIsPlaying}
@@ -259,3 +259,16 @@ export const HomeTemplate = () => {
       </Div>
    )
 }
+
+const ActionBoxWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px dashed;
+  height: 200px;
+  margin-top: 3rem;
+  padding-left: 50px;
+  padding-right: 50px;
+  cursor: pointer;
+`
